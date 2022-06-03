@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "githubrunner-ce46"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "githubrunner-ce46"
+  template:
+    metadata:
+      labels:
+        app: "githubrunner-ce46"
+    spec:
+      containers:
+        - name: "githubrunner-ce46"
+          image: "actionrunneracr.azurecr.io/githubrunner"
+          ports:
+          - containerPort: 80
