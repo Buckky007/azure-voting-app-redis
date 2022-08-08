@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "cluster1-b2a8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "cluster1-b2a8"
+  template:
+    metadata:
+      labels:
+        app: "cluster1-b2a8"
+    spec:
+      containers:
+        - name: "cluster1-b2a8"
+          image: "gitubcontaineracr.azurecr.io/cluster1"
+          ports:
+          - containerPort: 80
